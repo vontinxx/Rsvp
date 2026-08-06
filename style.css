@@ -1,3 +1,15 @@
+/* Palette and basic edits to support floral decorations */
+:root{
+    --bg: #F5E7DE; /* champagne / beige background */
+    --accent: #A83E2B; /* rust / terracotta primary */
+    --accent-dark: #C75A3C; /* deeper terracotta */
+    --blush: #EBD3C8; /* soft blush */
+    --sage: #8E9A74; /* sage */
+    --text: #4A2F28; /* deep brown */
+    --card-bg: #fffaf5;
+    --muted: #d8cec2;
+}
+
 *{
     margin:0;
     padding:0;
@@ -9,9 +21,9 @@ html{
 }
 
 body{
-    background:#F8F5F0;
+    background:var(--bg);
     font-family:'Poppins',sans-serif;
-    color:#5A4635;
+    color:var(--text);
     display:flex;
     justify-content:center;
     align-items:center;
@@ -20,7 +32,6 @@ body{
     overflow-x:hidden;
 }
 
-
 body:before{
     content:"";
     position:fixed;
@@ -28,11 +39,44 @@ body:before{
     z-index:-1;
 
     background:
-    radial-gradient(circle at top left,rgba(168,179,154,.25),transparent 40%),
-    radial-gradient(circle at bottom right,rgba(181,106,69,.15),transparent 45%);
+    radial-gradient(circle at top left, rgba(142,154,116,.06), transparent 40%),
+    radial-gradient(circle at bottom right, rgba(199,90,60,.05), transparent 45%);
 }
 
+/* floral decorations (positioned images) */
+.floral{
+    position:fixed;
+    pointer-events:none;
+    z-index:0;
+    opacity:0.95;
+    transform-origin:center;
+}
 
+.floral.top-left{
+    top:8px;
+    left:8px;
+    width:180px;
+}
+
+.floral.top-right{
+    top:18px;
+    right:8px;
+    width:160px;
+    transform:scaleX(-1);
+}
+
+.floral.bottom-left{
+    bottom:8px;
+    left:6px;
+    width:150px;
+}
+
+.floral.bottom-right{
+    bottom:6px;
+    right:6px;
+    width:200px;
+    transform:scaleX(-1);
+}
 
 /* PETALS */
 
@@ -47,7 +91,6 @@ body:before{
     z-index:999;
 }
 
-
 .petals span{
     position:absolute;
     top:-40px;
@@ -56,7 +99,7 @@ body:before{
     width:18px;
     height:26px;
 
-    background:#F6D7C3;
+    background:var(--blush);
 
     border-radius:
     70% 30% 70% 30%;
@@ -66,12 +109,9 @@ body:before{
     animation:petalFall 12s linear infinite;
 }
 
-
 .petals span:nth-child(even){
     background:#FFF1E6;
 }
-
-
 
 .petals span:nth-child(1){
     left:8%;
@@ -113,8 +153,6 @@ body:before{
     animation-delay:8s;
 }
 
-
-
 @keyframes petalFall{
 
 0%{
@@ -123,14 +161,12 @@ body:before{
     rotate(0deg);
 }
 
-
 50%{
     transform:
     translateY(50vh)
     translateX(30px)
     rotate(180deg);
 }
-
 
 100%{
     transform:
@@ -141,8 +177,6 @@ body:before{
 
 }
 
-
-
 /* CARD */
 
 .card{
@@ -150,7 +184,7 @@ body:before{
     width:100%;
     max-width:520px;
 
-    background:#fff;
+    background:var(--card-bg);
 
     border-radius:28px;
 
@@ -159,290 +193,128 @@ body:before{
     text-align:center;
 
     box-shadow:
-    0 20px 45px rgba(90,70,53,.12);
+    0 20px 45px rgba(74,47,40,.12);
 
     animation:fadeUp .8s ease;
+    z-index:2;
 }
-
-
 
 /* DECORATIVE GREENERY */
 
 .card:before,
 .card:after{
-
     content:"🌿";
-
     position:absolute;
-
     font-size:45px;
-
     opacity:.25;
-
 }
 
-
-.card:before{
-
-    top:10px;
-    left:10px;
-
-}
-
-
-.card:after{
-
-    bottom:10px;
-    right:10px;
-
-}
-
-
-
+.card:before{ top:10px; left:10px; }
+.card:after{ bottom:10px; right:10px; }
 
 /* MONOGRAM */
 
 .monogram{
-
     width:70px;
-
     height:auto;
-
     display:block;
-
     margin:0 auto 8px;
-
 }
-
-
 
 /* TEXT */
 
 .names{
-
     font-family:'Great Vibes',cursive;
-
     font-size:48px;
-
-    color:#B56A45;
-
+    color:var(--accent);
 }
-
-
 
 .heading{
-
     font-family:'Cormorant Garamond',serif;
-
     font-size:28px;
-
-    color:#5A4635;
-
+    color:var(--text);
     margin:10px 0 16px;
-
 }
-
-
 
 .invitation{
-
     font-family:'Cormorant Garamond',serif;
-
     font-size:20px;
-
     line-height:1.6;
-
 }
-
-
-
 
 .wedding-date{
-
     margin:20px 0 12px;
-
     font-size:21px;
-
     font-weight:600;
-
-    color:#B56A45;
-
+    color:var(--accent-dark);
 }
-
-
-
 
 .divider{
-
     height:1px;
-
     background:#e8dfd5;
-
     margin:22px 0;
-
 }
-
-
 
 .search-title{
-
     font-family:'Cormorant Garamond',serif;
-
     font-size:28px;
-
 }
-
-
-
 
 /* INPUT */
 
 input,
 textarea{
-
     width:100%;
-
     padding:14px;
-
     border-radius:14px;
-
-    border:1px solid #d8cec2;
-
+    border:1px solid var(--muted);
     margin-top:12px;
-
     font-family:'Poppins',sans-serif;
-
 }
-
-
-
-
 
 /* BUTTON */
 
 button{
-
     width:100%;
-
     padding:15px;
-
     margin-top:12px;
-
     border:none;
-
     border-radius:14px;
-
-    background:#B56A45;
-
+    background:var(--accent);
     color:white;
-
     font-size:15px;
-
     transition:.3s;
-
 }
 
-
-button:hover{
-
-    transform:translateY(-2px);
-
-    background:#9f5938;
-
-}
-
-
-
+button:hover{ transform:translateY(-2px); background:var(--accent-dark); }
 
 /* RSVP BOX */
 
 .invitation-box,
 .rsvp-details,
 .thank-you{
-
     background:#fffaf5;
-
     border:1px solid #ead8c8;
-
     border-radius:22px;
-
     padding:22px 18px;
-
     margin-top:20px;
-
     animation:fadeUp .6s ease;
-
 }
 
+.seat-number{ font-size:40px; color:var(--accent); font-weight:bold; }
 
-
-.seat-number{
-
-    font-size:40px;
-
-    color:#B56A45;
-
-    font-weight:bold;
-
-}
-
-
-
-.no-button{
-
-    background:#A8B39A;
-
-}
-
-
-
+.no-button{ background:var(--sage); }
 
 @keyframes fadeUp{
-
-from{
-
-opacity:0;
-
-transform:translateY(25px);
-
+from{ opacity:0; transform:translateY(25px); }
+to{ opacity:1; transform:translateY(0); }
 }
-
-
-to{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
-
-}
-
-
-
 
 @media(min-width:768px){
-
-.card{
-
-max-width:560px;
-
-padding:35px;
-
-}
-
-
-.monogram{
-
-width:90px;
-
-}
-
-
-.names{
-
-font-size:60px;
-
-}
-
+ .card{ max-width:560px; padding:35px; }
+ .monogram{ width:90px; }
+ .names{ font-size:60px; }
+ .floral.top-left{ width:260px; top:12px; left:12px; }
+ .floral.top-right{ width:220px; top:14px; right:12px; }
+ .floral.bottom-right{ width:240px; bottom:12px; right:12px; }
 }

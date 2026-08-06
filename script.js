@@ -1,4 +1,3 @@
-alert("SCRIPT IS WORKING");
 // GOOGLE SHEET WEB APP URL
 const scriptURL = "https://script.google.com/macros/s/AKfycbzXCcovs5ZM9YzqMXgckN_vwzTu_FRc9Nd1Reab__COKVJnJf65vv5NomY_PgZfoFlL/exec";
 

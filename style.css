@@ -16,7 +16,7 @@ body{
     justify-content:center;
     align-items:center;
     min-height:100vh;
-    padding:15px;
+    padding:12px;
     overflow-x:hidden;
 }
 
@@ -38,24 +38,24 @@ body:before{
     max-width:520px;
     background:#ffffff;
     border-radius:24px;
-    padding:25px 18px;
+    padding:20px 18px;
     text-align:center;
     box-shadow:0 15px 40px rgba(0,0,0,.08);
-    animation:fadeUp .8s;
 }
 
 
 /* MONOGRAM */
 
 .monogram{
-    width:70px;
-    max-width:25%;
+    width:55px;
+    height:auto;
     display:block;
-    margin:0 auto 10px;
+    margin:0 auto 5px;
 }
 
 
-/* NAMES */
+
+/* TEXT */
 
 .names{
     font-family:'Great Vibes',cursive;
@@ -64,12 +64,10 @@ body:before{
 }
 
 
-/* HEADINGS */
-
 .heading{
     font-family:'Cormorant Garamond',serif;
     font-size:26px;
-    margin:10px 0 15px;
+    margin:8px 0 15px;
 }
 
 
@@ -97,8 +95,9 @@ body:before{
     font-size:13px;
     color:#7b6d60;
     line-height:1.5;
-    margin:12px 0 18px;
+    margin:10px 0 18px;
 }
+
 
 
 /* BUTTON */
@@ -111,12 +110,6 @@ button{
     background:#B56A45;
     color:white;
     font-size:15px;
-    cursor:pointer;
-}
-
-
-button:hover{
-    background:#9f5938;
 }
 
 
@@ -125,46 +118,36 @@ button:hover{
 }
 
 
+
 .divider{
     height:1px;
     background:#e8e0d8;
-    margin:20px 0;
+    margin:18px 0;
 }
 
 
 .search-title{
     font-family:'Cormorant Garamond',serif;
     font-size:26px;
-    margin-bottom:15px;
+    margin-bottom:12px;
 }
+
 
 
 /* INPUT */
 
 input,
 textarea{
-
     width:100%;
     padding:14px;
-
     border:1px solid #d7cec5;
     border-radius:12px;
-
     font-family:'Poppins',sans-serif;
     font-size:15px;
-
     outline:none;
-
     margin-bottom:12px;
 }
 
-
-input:focus,
-textarea:focus{
-
-    border-color:#B56A45;
-
-}
 
 
 /* RSVP */
@@ -177,50 +160,10 @@ textarea:focus{
 .invitation-box,
 .rsvp-details,
 .thank-you{
-
     background:white;
     border-radius:20px;
     padding:20px;
-
-    box-shadow:
-    0 10px 30px rgba(0,0,0,.06);
-
-    animation:fadeUp .5s;
-
-}
-
-
-.seat-number{
-
-    font-size:34px;
-    font-weight:bold;
-    color:#B56A45;
-
-}
-
-
-.no-button{
-
-    background:#A8B39A;
-    margin-top:10px;
-
-}
-
-
-/* ANIMATION */
-
-@keyframes fadeUp{
-
-    from{
-        opacity:0;
-        transform:translateY(20px);
-    }
-
-    to{
-        opacity:1;
-        transform:none;
-    }
-
+    box-shadow:0 10px 30px rgba(0,0,0,.06);
 }
 
 
@@ -229,29 +172,25 @@ textarea:focus{
 
 @media(min-width:768px){
 
-    .card{
-        max-width:560px;
-        padding:35px 30px;
-    }
+.card{
+    max-width:560px;
+    padding:30px;
+}
 
+.monogram{
+    width:75px;
+}
 
-    .monogram{
-        width:90px;
-    }
+.names{
+    font-size:58px;
+}
 
+.heading{
+    font-size:32px;
+}
 
-    .names{
-        font-size:58px;
-    }
-
-
-    .heading{
-        font-size:32px;
-    }
-
-
-    .invitation{
-        font-size:22px;
-    }
+.invitation{
+    font-size:22px;
+}
 
 }

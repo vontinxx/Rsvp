@@ -1,0 +1,253 @@
+/* ===========================
+   CHRISTINE & VON RSVP V2
+   =========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    background:#F8F5F0;
+
+    color:#5A4635;
+
+    font-family:'Poppins',sans-serif;
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:40px 20px;
+
+    overflow-x:hidden;
+
+}
+
+/* ---------- Background ---------- */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+    radial-gradient(circle at top left,
+    rgba(168,179,154,.15),
+    transparent 35%),
+
+    radial-gradient(circle at bottom right,
+    rgba(181,106,69,.12),
+    transparent 40%);
+
+    z-index:-2;
+
+}
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+    linear-gradient(rgba(255,255,255,.25),
+    rgba(255,255,255,.25));
+
+    z-index:-1;
+
+}
+
+/* ---------- Main Card ---------- */
+
+.card{
+
+    width:100%;
+
+    max-width:560px;
+
+    background:white;
+
+    border-radius:28px;
+
+    padding:50px 35px;
+
+    box-shadow:
+
+    0 20px 60px rgba(0,0,0,.08),
+
+    0 5px 15px rgba(0,0,0,.05);
+
+    text-align:center;
+
+    animation:fadeUp 1s ease;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+/* Elegant top border */
+
+.card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:6px;
+
+    background:linear-gradient(
+        90deg,
+        #A8B39A,
+        #B56A45,
+        #A8B39A
+    );
+
+}
+
+/* ---------- Monogram ---------- */
+
+.monogram{
+
+    width:170px;
+
+    max-width:65%;
+
+    display:block;
+
+    margin:0 auto 25px;
+
+    animation:fadeIn 2s ease;
+
+}
+
+/* ---------- Couple Names ---------- */
+
+.names{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:64px;
+
+    color:#B56A45;
+
+    font-weight:400;
+
+    line-height:1.1;
+
+    margin-bottom:8px;
+
+}
+
+/* ---------- Heading ---------- */
+
+.heading{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:34px;
+
+    font-weight:600;
+
+    color:#5A4635;
+
+    margin-bottom:30px;
+
+}
+
+/* ---------- Invitation ---------- */
+
+.invitation{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:26px;
+
+    line-height:1.8;
+
+    color:#6A5545;
+
+    margin-bottom:30px;
+
+}
+
+/* ---------- Date ---------- */
+
+.wedding-date{
+
+    font-size:22px;
+
+    font-weight:600;
+
+    color:#B56A45;
+
+    margin-bottom:25px;
+
+}
+
+/* ---------- RSVP Deadline ---------- */
+
+.deadline{
+
+    font-size:18px;
+
+    font-weight:600;
+
+    margin-bottom:12px;
+
+}
+
+.deadline strong{
+
+    color:#B56A45;
+
+}
+
+.deadline-note{
+
+    color:#7A6A5A;
+
+    font-size:15px;
+
+    line-height:1.7;
+
+    margin-bottom:30px;
+
+}
+
+/* ---------- Divider ---------- */
+
+.divider{
+
+    width:80%;
+
+    height:1px;
+
+    background:#E5DED4;
+
+    margin:35px auto;
+
+}

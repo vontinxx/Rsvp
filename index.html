@@ -20,15 +20,91 @@
     <source src="music.mp3" type="audio/mpeg">
 </audio>
 
+
+<!-- LOADING SCREEN -->
 <div id="loadingScreen" class="loading-screen">
-    <img src="IMG_1100.png" class="loading-logo" alt="Christine & Von Monogram">
-    <h1 class="loading-name">Christine & Von</h1>
-    <p class="loading-text">Preparing your invitation...</p>
+
+    <img src="IMG_1100.png" class="loading-logo" alt="Christine & Von">
+
+    <h1 class="loading-name">
+        Christine & Von
+    </h1>
+
+    <p class="loading-text">
+        Preparing your invitation...
+    </p>
 
     <div class="loader">
-        <span></span><span></span><span></span>
+        <span></span>
+        <span></span>
+        <span></span>
     </div>
+
 </div>
+
+
+
+<!-- MAIN INVITATION -->
+<div id="mainCard" class="card hidden">
+
+    <img src="IMG_1100.png" class="monogram" alt="Christine & Von">
+
+
+    <h1 class="names">
+        Christine & Von
+    </h1>
+
+
+    <h2 class="heading">
+        Welcome to Our Wedding RSVP
+    </h2>
+
+
+    <p class="invitation">
+        Together with our families,<br><br>
+        we request the pleasure of your company<br>
+        as we celebrate our wedding.
+    </p>
+
+
+    <div class="wedding-date">
+        November 14, 2026
+    </div>
+
+
+    <button id="musicButton">
+        ▶ Play Music
+    </button>
+
+
+    <div class="divider"></div>
+
+
+    <h3 class="search-title">
+        Find Your Invitation
+    </h3>
+
+
+    <input
+    type="text"
+    id="guestName"
+    placeholder="Enter your full name">
+
+
+    <button id="searchButton">
+        Search Invitation
+    </button>
+
+
+    <div id="result"></div>
+
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
 
 <div id="mainCard" class="card hidden">
 

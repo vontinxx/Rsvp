@@ -16,7 +16,7 @@ body{
     justify-content:center;
     align-items:center;
     min-height:100vh;
-    padding:12px;
+    padding:15px;
     overflow-x:hidden;
 }
 
@@ -31,62 +31,12 @@ body:before{
 }
 
 
-/* LOADING SCREEN */
-
-.loading-screen{
-    text-align:center;
-    animation:fadeIn .8s;
-}
-
-.loading-logo{
-    width:90px;
-    max-width:35%;
-    margin-bottom:12px;
-}
-
-.loading-name{
-    font-family:'Great Vibes',cursive;
-    font-size:42px;
-    color:#B56A45;
-}
-
-.loading-text{
-    font-family:'Cormorant Garamond',serif;
-    font-size:20px;
-}
-
-
-.loader{
-    display:flex;
-    justify-content:center;
-    gap:7px;
-    margin-top:15px;
-}
-
-.loader span{
-    width:8px;
-    height:8px;
-    background:#B56A45;
-    border-radius:50%;
-    animation:bounce 1s infinite;
-}
-
-.loader span:nth-child(2){
-    animation-delay:.2s;
-}
-
-.loader span:nth-child(3){
-    animation-delay:.4s;
-}
-
-
-
-/* MAIN INVITATION CARD */
+/* MAIN CARD */
 
 .card{
     width:100%;
     max-width:520px;
-    background:white;
+    background:#ffffff;
     border-radius:24px;
     padding:25px 18px;
     text-align:center;
@@ -95,13 +45,17 @@ body:before{
 }
 
 
+/* MONOGRAM */
+
 .monogram{
-    width:100px;
-    max-width:35%;
+    width:70px;
+    max-width:25%;
     display:block;
-    margin:0 auto 12px;
+    margin:0 auto 10px;
 }
 
+
+/* NAMES */
 
 .names{
     font-family:'Great Vibes',cursive;
@@ -109,6 +63,8 @@ body:before{
     color:#B56A45;
 }
 
+
+/* HEADINGS */
 
 .heading{
     font-family:'Cormorant Garamond',serif;
@@ -125,7 +81,7 @@ body:before{
 
 
 .wedding-date{
-    margin:18px 0 12px;
+    margin:18px 0 10px;
     font-size:20px;
     font-weight:600;
     color:#B56A45;
@@ -141,7 +97,31 @@ body:before{
     font-size:13px;
     color:#7b6d60;
     line-height:1.5;
-    margin:12px 0 20px;
+    margin:12px 0 18px;
+}
+
+
+/* BUTTON */
+
+button{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:12px;
+    background:#B56A45;
+    color:white;
+    font-size:15px;
+    cursor:pointer;
+}
+
+
+button:hover{
+    background:#9f5938;
+}
+
+
+.music-button{
+    margin-top:8px;
 }
 
 
@@ -159,43 +139,31 @@ body:before{
 }
 
 
-
-/* INPUTS */
+/* INPUT */
 
 input,
 textarea{
+
     width:100%;
     padding:14px;
+
     border:1px solid #d7cec5;
     border-radius:12px;
+
     font-family:'Poppins',sans-serif;
     font-size:15px;
+
     outline:none;
+
     margin-bottom:12px;
 }
 
 
 input:focus,
 textarea:focus{
+
     border-color:#B56A45;
-}
 
-
-/* BUTTONS */
-
-button{
-    width:100%;
-    padding:14px;
-    border:none;
-    border-radius:12px;
-    background:#B56A45;
-    color:white;
-    font-size:15px;
-}
-
-
-button:hover{
-    background:#9f5938;
 }
 
 
@@ -209,60 +177,50 @@ button:hover{
 .invitation-box,
 .rsvp-details,
 .thank-you{
-    background:#fff;
+
+    background:white;
     border-radius:20px;
     padding:20px;
-    box-shadow:0 10px 30px rgba(0,0,0,.06);
-    animation:fadeUp .6s;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.06);
+
+    animation:fadeUp .5s;
+
 }
 
 
 .seat-number{
-    font-size:35px;
-    color:#B56A45;
+
+    font-size:34px;
     font-weight:bold;
+    color:#B56A45;
+
 }
 
 
 .no-button{
+
     background:#A8B39A;
     margin-top:10px;
+
 }
 
 
 /* ANIMATION */
 
 @keyframes fadeUp{
+
     from{
         opacity:0;
         transform:translateY(20px);
     }
+
     to{
         opacity:1;
         transform:none;
     }
-}
 
-
-@keyframes fadeIn{
-    from{
-        opacity:0;
-    }
-    to{
-        opacity:1;
-    }
-}
-
-
-@keyframes bounce{
-    0%,80%,100%{
-        transform:scale(.5);
-        opacity:.5;
-    }
-    40%{
-        transform:scale(1);
-        opacity:1;
-    }
 }
 
 
@@ -271,24 +229,29 @@ button:hover{
 
 @media(min-width:768px){
 
-.card{
-    padding:40px 35px;
-}
+    .card{
+        max-width:560px;
+        padding:35px 30px;
+    }
 
-.monogram{
-    width:130px;
-}
 
-.names{
-    font-size:60px;
-}
+    .monogram{
+        width:90px;
+    }
 
-.heading{
-    font-size:32px;
-}
 
-.invitation{
-    font-size:23px;
-}
+    .names{
+        font-size:58px;
+    }
+
+
+    .heading{
+        font-size:32px;
+    }
+
+
+    .invitation{
+        font-size:22px;
+    }
 
 }

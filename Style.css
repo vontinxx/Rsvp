@@ -1,3 +1,14 @@
+window.addEventListener("load", function(){
+
+    setTimeout(function(){
+
+        document.getElementById("loadingScreen").style.display="none";
+
+        document.getElementById("mainCard").classList.remove("hidden");
+
+    },2000);
+
+});
 *{
     margin:0;
     padding:0;

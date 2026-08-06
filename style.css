@@ -26,112 +26,108 @@ body:before{
     inset:0;
     z-index:-1;
     background:
-    radial-gradient(circle at top left,rgba(168,179,154,.18),transparent 40%),
-    radial-gradient(circle at bottom right,rgba(181,106,69,.12),transparent 45%);
+    radial-gradient(circle at top left,rgba(168,179,154,.25),transparent 40%),
+    radial-gradient(circle at bottom right,rgba(181,106,69,.15),transparent 45%);
 }
 
 
-/* MAIN CARD */
+/* CARD */
 
 .card{
+    position:relative;
     width:100%;
     max-width:520px;
-    background:#ffffff;
-    border-radius:24px;
-    padding:20px 18px;
+    background:#fff;
+    border-radius:28px;
+    padding:25px 18px;
     text-align:center;
-    box-shadow:0 15px 40px rgba(0,0,0,.08);
+    box-shadow:0 20px 45px rgba(90,70,53,.12);
+    overflow:hidden;
+    animation:fadeUp .8s ease;
 }
+
+
+/* DECORATIVE FLOWERS */
+
+.card:before,
+.card:after{
+    content:"🌿";
+    position:absolute;
+    font-size:45px;
+    opacity:.25;
+}
+
+.card:before{
+    top:10px;
+    left:10px;
+}
+
+.card:after{
+    bottom:10px;
+    right:10px;
+}
+
 
 
 /* MONOGRAM */
 
 .monogram{
-    width:55px;
+    width:70px;
     height:auto;
     display:block;
-    margin:0 auto 5px;
+    margin:0 auto 8px;
 }
 
 
 
-/* TEXT */
+/* NAMES */
 
 .names{
     font-family:'Great Vibes',cursive;
-    font-size:46px;
+    font-size:48px;
     color:#B56A45;
 }
 
 
 .heading{
     font-family:'Cormorant Garamond',serif;
-    font-size:26px;
-    margin:8px 0 15px;
+    font-size:28px;
+    color:#5A4635;
+    margin:10px 0 16px;
 }
 
 
 .invitation{
     font-family:'Cormorant Garamond',serif;
-    font-size:19px;
-    line-height:1.5;
+    font-size:20px;
+    line-height:1.6;
 }
 
 
+
+/* DATE */
+
 .wedding-date{
-    margin:18px 0 10px;
-    font-size:20px;
+    margin:20px 0 12px;
+    font-size:21px;
     font-weight:600;
     color:#B56A45;
 }
 
 
-.deadline{
-    font-size:14px;
-}
-
-
-.deadline-note{
-    font-size:13px;
-    color:#7b6d60;
-    line-height:1.5;
-    margin:10px 0 18px;
-}
-
-
-
-/* BUTTON */
-
-button{
-    width:100%;
-    padding:14px;
-    border:none;
-    border-radius:12px;
-    background:#B56A45;
-    color:white;
-    font-size:15px;
-}
-
-
-.music-button{
-    margin-top:8px;
-}
-
-
+/* RSVP */
 
 .divider{
     height:1px;
-    background:#e8e0d8;
-    margin:18px 0;
+    background:#e8dfd5;
+    margin:22px 0;
 }
 
 
 .search-title{
     font-family:'Cormorant Garamond',serif;
-    font-size:26px;
-    margin-bottom:12px;
+    font-size:28px;
 }
-
 
 
 /* INPUT */
@@ -140,57 +136,103 @@ input,
 textarea{
     width:100%;
     padding:14px;
-    border:1px solid #d7cec5;
-    border-radius:12px;
+    border-radius:14px;
+    border:1px solid #d8cec2;
+    margin-top:12px;
     font-family:'Poppins',sans-serif;
+}
+
+
+
+/* BUTTON */
+
+button{
+    width:100%;
+    padding:15px;
+    margin-top:12px;
+    border:none;
+    border-radius:14px;
+    background:#B56A45;
+    color:white;
     font-size:15px;
-    outline:none;
-    margin-bottom:12px;
+    transition:.3s;
+}
+
+button:hover{
+    transform:translateY(-2px);
+    background:#9f5938;
 }
 
 
-
-/* RSVP */
-
-#result{
-    margin-top:20px;
-}
-
+/* RSVP BOXES */
 
 .invitation-box,
 .rsvp-details,
 .thank-you{
-    background:white;
-    border-radius:20px;
-    padding:20px;
-    box-shadow:0 10px 30px rgba(0,0,0,.06);
+
+    background:#fffaf5;
+    border:1px solid #ead8c8;
+    border-radius:22px;
+    padding:22px 18px;
+    margin-top:20px;
+
+    animation:fadeUp .6s ease;
+
 }
 
 
 
-/* DESKTOP */
+.seat-number{
+
+    font-size:40px;
+    color:#B56A45;
+    font-weight:bold;
+
+}
+
+
+
+.no-button{
+
+    background:#A8B39A;
+
+}
+
+
+
+/* ANIMATION */
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+
 
 @media(min-width:768px){
 
 .card{
     max-width:560px;
-    padding:30px;
+    padding:35px;
 }
+
 
 .monogram{
-    width:75px;
+    width:90px;
 }
+
 
 .names{
-    font-size:58px;
-}
-
-.heading{
-    font-size:32px;
-}
-
-.invitation{
-    font-size:22px;
+    font-size:60px;
 }
 
 }

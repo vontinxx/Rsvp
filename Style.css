@@ -16,7 +16,7 @@ body{
     justify-content:center;
     align-items:center;
     min-height:100vh;
-    padding:15px;
+    padding:12px;
     overflow-x:hidden;
 }
 
@@ -26,17 +26,12 @@ body:before{
     inset:0;
     z-index:-1;
     background:
-    radial-gradient(circle at top left,rgba(168,179,154,.20),transparent 40%),
-    radial-gradient(circle at bottom right,rgba(181,106,69,.15),transparent 45%);
+    radial-gradient(circle at top left,rgba(168,179,154,.18),transparent 40%),
+    radial-gradient(circle at bottom right,rgba(181,106,69,.12),transparent 45%);
 }
 
 
-.hidden{
-    display:none;
-}
-
-
-/* LOADING */
+/* LOADING SCREEN */
 
 .loading-screen{
     text-align:center;
@@ -44,19 +39,18 @@ body:before{
 }
 
 .loading-logo{
-    width:110px;
-    max-width:50%;
-    margin-bottom:15px;
+    width:90px;
+    max-width:35%;
+    margin-bottom:12px;
 }
 
 .loading-name{
     font-family:'Great Vibes',cursive;
-    font-size:44px;
+    font-size:42px;
     color:#B56A45;
 }
 
 .loading-text{
-    margin:10px 0;
     font-family:'Cormorant Garamond',serif;
     font-size:20px;
 }
@@ -66,13 +60,14 @@ body:before{
     display:flex;
     justify-content:center;
     gap:7px;
+    margin-top:15px;
 }
 
 .loader span{
     width:8px;
     height:8px;
-    border-radius:50%;
     background:#B56A45;
+    border-radius:50%;
     animation:bounce 1s infinite;
 }
 
@@ -85,14 +80,15 @@ body:before{
 }
 
 
-/* MAIN CARD */
+
+/* MAIN INVITATION CARD */
 
 .card{
     width:100%;
     max-width:520px;
     background:white;
     border-radius:24px;
-    padding:28px 18px;
+    padding:25px 18px;
     text-align:center;
     box-shadow:0 15px 40px rgba(0,0,0,.08);
     animation:fadeUp .8s;
@@ -100,36 +96,36 @@ body:before{
 
 
 .monogram{
-    width:110px;
-    max-width:45%;
+    width:100px;
+    max-width:35%;
     display:block;
-    margin:0 auto 15px;
+    margin:0 auto 12px;
 }
 
 
 .names{
     font-family:'Great Vibes',cursive;
-    font-size:48px;
+    font-size:46px;
     color:#B56A45;
 }
 
 
 .heading{
     font-family:'Cormorant Garamond',serif;
-    font-size:27px;
-    margin:10px 0 18px;
+    font-size:26px;
+    margin:10px 0 15px;
 }
 
 
 .invitation{
     font-family:'Cormorant Garamond',serif;
-    font-size:20px;
-    line-height:1.6;
+    font-size:19px;
+    line-height:1.5;
 }
 
 
 .wedding-date{
-    margin:20px 0 10px;
+    margin:18px 0 12px;
     font-size:20px;
     font-weight:600;
     color:#B56A45;
@@ -144,15 +140,15 @@ body:before{
 .deadline-note{
     font-size:13px;
     color:#7b6d60;
-    line-height:1.6;
-    margin:12px 0 22px;
+    line-height:1.5;
+    margin:12px 0 20px;
 }
 
 
 .divider{
     height:1px;
     background:#e8e0d8;
-    margin:22px 0;
+    margin:20px 0;
 }
 
 
@@ -163,20 +159,17 @@ body:before{
 }
 
 
+
 /* INPUTS */
 
 input,
 textarea{
-
     width:100%;
     padding:14px;
-
     border:1px solid #d7cec5;
     border-radius:12px;
-
-    font-size:15px;
     font-family:'Poppins',sans-serif;
-
+    font-size:15px;
     outline:none;
     margin-bottom:12px;
 }
@@ -184,40 +177,25 @@ textarea{
 
 input:focus,
 textarea:focus{
-
     border-color:#B56A45;
-
-    box-shadow:
-    0 0 0 3px rgba(181,106,69,.15);
-
 }
 
 
 /* BUTTONS */
 
 button{
-
     width:100%;
     padding:14px;
-
     border:none;
     border-radius:12px;
-
     background:#B56A45;
     color:white;
-
     font-size:15px;
-    cursor:pointer;
-
-    transition:.3s;
 }
 
 
 button:hover{
-
     background:#9f5938;
-    transform:translateY(-2px);
-
 }
 
 
@@ -231,133 +209,86 @@ button:hover{
 .invitation-box,
 .rsvp-details,
 .thank-you{
-
     background:#fff;
-
     border-radius:20px;
-
-    padding:22px 18px;
-
-    box-shadow:
-    0 10px 30px rgba(0,0,0,.06);
-
+    padding:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.06);
     animation:fadeUp .6s;
-
-}
-
-
-.invitation-box h3,
-.rsvp-details h3{
-
-    font-family:'Cormorant Garamond',serif;
-    font-size:28px;
-    color:#B56A45;
-
 }
 
 
 .seat-number{
-
-    font-size:36px;
-    font-weight:bold;
+    font-size:35px;
     color:#B56A45;
-    margin:10px;
-
+    font-weight:bold;
 }
 
 
 .no-button{
-
-    margin-top:10px;
     background:#A8B39A;
-
-}
-
-
-.primary{
-
-    background:#F8F5F0;
-    padding:14px;
-    border-radius:12px;
-    margin-bottom:15px;
-}
-
-
-.primary span{
-
-    display:block;
-    color:#7A8B6A;
-    font-size:13px;
-
-}
-
-
-textarea{
-
-    min-height:100px;
-    resize:none;
-
-}
-
-
-/* THANK YOU */
-
-.thank-you h2{
-
-    font-family:'Great Vibes',cursive;
-    font-size:52px;
-    color:#B56A45;
-
-}
-
-
-.heart{
-
-    font-size:40px;
-
+    margin-top:10px;
 }
 
 
 /* ANIMATION */
 
 @keyframes fadeUp{
-
     from{
         opacity:0;
         transform:translateY(20px);
     }
-
     to{
         opacity:1;
         transform:none;
     }
-
 }
 
 
 @keyframes fadeIn{
-
     from{
         opacity:0;
     }
-
     to{
         opacity:1;
     }
-
 }
 
 
 @keyframes bounce{
-
     0%,80%,100%{
         transform:scale(.5);
         opacity:.5;
     }
-
     40%{
         transform:scale(1);
         opacity:1;
     }
+}
+
+
+
+/* DESKTOP */
+
+@media(min-width:768px){
+
+.card{
+    padding:40px 35px;
+}
+
+.monogram{
+    width:130px;
+}
+
+.names{
+    font-size:60px;
+}
+
+.heading{
+    font-size:32px;
+}
+
+.invitation{
+    font-size:23px;
+}
 
 }

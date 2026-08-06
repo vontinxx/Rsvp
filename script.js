@@ -5,24 +5,67 @@ const scriptURL = "https://script.google.com/macros/s/AKfycbzXCcovs5ZM9YzqMXgckN
 let guestData = null;
 
 
+// =======================
+// MUSIC CONTROL
+// =======================
+
+const music = document.getElementById("bgMusic");
+const musicButton = document.getElementById("musicButton");
+
+
+if(musicButton && music){
+
+    musicButton.addEventListener("click", function(){
+
+        if(music.paused){
+
+            music.play();
+
+            musicButton.innerHTML = "⏸ Pause Music";
+
+        }else{
+
+            music.pause();
+
+            musicButton.innerHTML = "▶ Play Music";
+
+        }
+
+    });
+
+}
+
+
+
+// =======================
 // SEARCH GUEST
+// =======================
+
 document.getElementById("searchButton").addEventListener("click", function(){
 
     const name = document.getElementById("guestName").value.trim();
 
+
     if(name === ""){
+
         alert("Please enter your full name.");
         return;
+
     }
 
 
+
     fetch(scriptURL + "?name=" + encodeURIComponent(name))
+
+
     .then(response => response.json())
+
 
     .then(data => {
 
 
         if(data.found === false){
+
 
             document.getElementById("result").innerHTML = `
 
@@ -44,6 +87,7 @@ document.getElementById("searchButton").addEventListener("click", function(){
 
 
         guestData = data;
+
 
 
         document.getElementById("result").innerHTML = `
@@ -114,7 +158,11 @@ document.getElementById("searchButton").addEventListener("click", function(){
 
 
 
+
+// =======================
 // YES / NO RESPONSE
+// =======================
+
 
 function confirmAttendance(answer){
 
@@ -138,6 +186,7 @@ function confirmAttendance(answer){
 
         guestFields += `
 
+
         <label>
         Guest ${i}
         </label>
@@ -156,8 +205,8 @@ function confirmAttendance(answer){
 
 
 
-    document.getElementById("result").innerHTML = `
 
+    document.getElementById("result").innerHTML = `
 
 
     <div class="rsvp-details">
@@ -224,8 +273,10 @@ function confirmAttendance(answer){
 
 
 
-
+// =======================
 // SUBMIT RSVP
+// =======================
+
 
 function submitRSVP(status){
 
@@ -234,6 +285,7 @@ function submitRSVP(status){
 
 
     document.querySelectorAll(".extraGuest")
+
     .forEach(input => {
 
 
@@ -248,29 +300,46 @@ function submitRSVP(status){
 
 
 
+
     const message =
-    document.getElementById("message") ?
-    document.getElementById("message").value :
+
+    document.getElementById("message")
+
+    ?
+
+    document.getElementById("message").value
+
+    :
+
     "";
+
 
 
 
 
     fetch(scriptURL, {
 
+
         method:"POST",
+
 
         body:JSON.stringify({
 
+
             name:guestData.name,
+
 
             status:status,
 
+
             guests:guests.join(", "),
+
 
             message:message
 
+
         })
+
 
     })
 
@@ -282,6 +351,7 @@ function submitRSVP(status){
         document.getElementById("result").innerHTML = `
 
 
+
         <div class="thank-you">
 
 
@@ -290,14 +360,17 @@ function submitRSVP(status){
         </div>
 
 
+
         <h2>
         Thank You!
         </h2>
 
 
+
         <p>
         Your RSVP has been received.
         </p>
+
 
 
         <p>
@@ -306,11 +379,13 @@ function submitRSVP(status){
         </p>
 
 
+
         <p>
         With love and gratitude,
         <br>
         Christine & Von
         </p>
+
 
 
         </div>

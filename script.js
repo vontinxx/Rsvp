@@ -273,7 +273,7 @@ document.getElementById("searchButton").addEventListener("click", function(){
     }
 
 
-    fetch(scriptURL + "?name=" + encodeURIComponent(name))
+    fetch(scriptURL + "?action=search&name=" + encodeURIComponent(name))
 
 
     .then(response => response.json())

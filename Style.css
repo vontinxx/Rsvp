@@ -1,181 +1,363 @@
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
 body{
-background:#F8F5F0;
-font-family:'Poppins',sans-serif;
-color:#5A4635;
-display:flex;
-justify-content:center;
-align-items:center;
-min-height:100vh;
-padding:24px;
-overflow-x:hidden;
+    background:#F8F5F0;
+    font-family:'Poppins',sans-serif;
+    color:#5A4635;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    padding:15px;
+    overflow-x:hidden;
 }
+
 body:before{
-content:"";
-position:fixed;inset:0;z-index:-2;
-background:
-radial-gradient(circle at top left,rgba(168,179,154,.18),transparent 40%),
-radial-gradient(circle at bottom right,rgba(181,106,69,.12),transparent 45%);
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    background:
+    radial-gradient(circle at top left,rgba(168,179,154,.20),transparent 40%),
+    radial-gradient(circle at bottom right,rgba(181,106,69,.15),transparent 45%);
 }
-.hidden{display:none}
-.loading-screen{text-align:center;animation:fadeIn .8s}
-.loading-logo{width:160px;max-width:60%;margin-bottom:20px}
-.loading-name{font-family:'Great Vibes',cursive;font-size:58px;color:#B56A45}
-.loading-text{margin:12px 0 20px;font-family:'Cormorant Garamond',serif;font-size:26px}
-.loader{display:flex;justify-content:center;gap:8px}
-.loader span{width:10px;height:10px;border-radius:50%;background:#B56A45;animation:bounce 1s infinite}
-.loader span:nth-child(2){animation-delay:.2s}
-.loader span:nth-child(3){animation-delay:.4s}
+
+
+.hidden{
+    display:none;
+}
+
+
+/* LOADING */
+
+.loading-screen{
+    text-align:center;
+    animation:fadeIn .8s;
+}
+
+.loading-logo{
+    width:110px;
+    max-width:50%;
+    margin-bottom:15px;
+}
+
+.loading-name{
+    font-family:'Great Vibes',cursive;
+    font-size:44px;
+    color:#B56A45;
+}
+
+.loading-text{
+    margin:10px 0;
+    font-family:'Cormorant Garamond',serif;
+    font-size:20px;
+}
+
+
+.loader{
+    display:flex;
+    justify-content:center;
+    gap:7px;
+}
+
+.loader span{
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:#B56A45;
+    animation:bounce 1s infinite;
+}
+
+.loader span:nth-child(2){
+    animation-delay:.2s;
+}
+
+.loader span:nth-child(3){
+    animation-delay:.4s;
+}
+
+
+/* MAIN CARD */
+
 .card{
-width:min(100%,560px);
-background:#fff;
-border-radius:28px;
-padding:42px 28px;
-box-shadow:0 18px 45px rgba(0,0,0,.08);
-text-align:center;
-animation:fadeUp .8s;
+    width:100%;
+    max-width:520px;
+    background:white;
+    border-radius:24px;
+    padding:28px 18px;
+    text-align:center;
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+    animation:fadeUp .8s;
 }
-.monogram{width:180px;max-width:60%;display:block;margin:0 auto 22px}
-.names{font-family:'Great Vibes',cursive;font-size:64px;color:#B56A45}
-.heading{font-family:'Cormorant Garamond',serif;font-size:34px;margin:12px 0 22px}
-.invitation{font-family:'Cormorant Garamond',serif;font-size:25px;line-height:1.8}
-.wedding-date{margin:24px 0 14px;font-size:22px;font-weight:600;color:#B56A45}
-.deadline{font-weight:600}
-.deadline-note{font-size:15px;color:#7b6d60;line-height:1.7;margin:14px 0 28px}
-.divider{height:1px;background:#e8e0d8;margin:28px 0}
-.search-title{font-family:'Cormorant Garamond',serif;font-size:28px;margin-bottom:18px}
-input{
-width:100%;
-padding:16px 18px;
-border:1px solid #d7cec5;
-border-radius:14px;
-font-size:16px;
-margin-bottom:16px;
-outline:none;
-transition:.3s;
+
+
+.monogram{
+    width:110px;
+    max-width:45%;
+    display:block;
+    margin:0 auto 15px;
 }
-input:focus{border-color:#B56A45;box-shadow:0 0 0 4px rgba(181,106,69,.15)}
+
+
+.names{
+    font-family:'Great Vibes',cursive;
+    font-size:48px;
+    color:#B56A45;
+}
+
+
+.heading{
+    font-family:'Cormorant Garamond',serif;
+    font-size:27px;
+    margin:10px 0 18px;
+}
+
+
+.invitation{
+    font-family:'Cormorant Garamond',serif;
+    font-size:20px;
+    line-height:1.6;
+}
+
+
+.wedding-date{
+    margin:20px 0 10px;
+    font-size:20px;
+    font-weight:600;
+    color:#B56A45;
+}
+
+
+.deadline{
+    font-size:14px;
+}
+
+
+.deadline-note{
+    font-size:13px;
+    color:#7b6d60;
+    line-height:1.6;
+    margin:12px 0 22px;
+}
+
+
+.divider{
+    height:1px;
+    background:#e8e0d8;
+    margin:22px 0;
+}
+
+
+.search-title{
+    font-family:'Cormorant Garamond',serif;
+    font-size:26px;
+    margin-bottom:15px;
+}
+
+
+/* INPUTS */
+
+input,
+textarea{
+
+    width:100%;
+    padding:14px;
+
+    border:1px solid #d7cec5;
+    border-radius:12px;
+
+    font-size:15px;
+    font-family:'Poppins',sans-serif;
+
+    outline:none;
+    margin-bottom:12px;
+}
+
+
+input:focus,
+textarea:focus{
+
+    border-color:#B56A45;
+
+    box-shadow:
+    0 0 0 3px rgba(181,106,69,.15);
+
+}
+
+
+/* BUTTONS */
+
 button{
-width:100%;
-padding:16px;
-border:none;
-border-radius:14px;
-background:#B56A45;
-color:#fff;
-font-size:16px;
-cursor:pointer;
-transition:.3s;
+
+    width:100%;
+    padding:14px;
+
+    border:none;
+    border-radius:12px;
+
+    background:#B56A45;
+    color:white;
+
+    font-size:15px;
+    cursor:pointer;
+
+    transition:.3s;
 }
-button:hover{background:#9f5938;transform:translateY(-2px)}
-.music-button{margin-bottom:8px}
-#result{margin-top:24px}
-@media(max-width:600px){
-.card{padding:30px 22px}
-.names{font-size:52px}
-.heading{font-size:28px}
-.invitation{font-size:22px}
-.loading-name{font-size:48px}
+
+
+button:hover{
+
+    background:#9f5938;
+    transform:translateY(-2px);
+
 }
-@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
-@keyframes fadeIn{from{opacity:0}to{opacity:1}}
-@keyframes bounce{0%,80%,100%{transform:scale(.5);opacity:.5}40%{transform:scale(1);opacity:1}}"
-/* RSVP INVITATION BOX */
+
+
+/* RSVP */
+
+#result{
+    margin-top:20px;
+}
+
 
 .invitation-box,
 .rsvp-details,
 .thank-you{
+
     background:#fff;
-    padding:30px 24px;
-    border-radius:24px;
-    box-shadow:0 12px 35px rgba(0,0,0,.08);
-    animation:fadeUp .8s;
+
+    border-radius:20px;
+
+    padding:22px 18px;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.06);
+
+    animation:fadeUp .6s;
+
 }
 
 
 .invitation-box h3,
 .rsvp-details h3{
+
     font-family:'Cormorant Garamond',serif;
-    font-size:32px;
+    font-size:28px;
     color:#B56A45;
-    margin-bottom:15px;
-}
 
-
-.invitation-box p,
-.rsvp-details p,
-.thank-you p{
-    font-family:'Cormorant Garamond',serif;
-    font-size:22px;
-    line-height:1.6;
 }
 
 
 .seat-number{
-    font-size:40px;
-    font-weight:600;
+
+    font-size:36px;
+    font-weight:bold;
     color:#B56A45;
     margin:10px;
-}
 
-
-.yes-button{
-    background:#B56A45;
-    margin-top:10px;
 }
 
 
 .no-button{
+
+    margin-top:10px;
     background:#A8B39A;
-    margin-top:12px;
+
 }
 
 
 .primary{
+
     background:#F8F5F0;
-    padding:16px;
-    border-radius:14px;
-    margin-bottom:18px;
-    font-weight:600;
+    padding:14px;
+    border-radius:12px;
+    margin-bottom:15px;
 }
 
 
 .primary span{
+
     display:block;
     color:#7A8B6A;
-    font-size:14px;
-    margin-top:5px;
-}
+    font-size:13px;
 
-
-.rsvp-details label{
-    display:block;
-    text-align:left;
-    margin:14px 0 8px;
-    font-weight:500;
 }
 
 
 textarea{
-    width:100%;
-    min-height:120px;
-    padding:16px;
-    border:1px solid #d7cec5;
-    border-radius:14px;
+
+    min-height:100px;
     resize:none;
-    font-family:'Poppins',sans-serif;
-    margin-bottom:16px;
+
 }
 
 
+/* THANK YOU */
+
 .thank-you h2{
+
     font-family:'Great Vibes',cursive;
-    font-size:58px;
+    font-size:52px;
     color:#B56A45;
+
 }
 
 
 .heart{
-    font-size:50px;
-    margin-bottom:15px;
+
+    font-size:40px;
+
+}
+
+
+/* ANIMATION */
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:none;
+    }
+
+}
+
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+    }
+
+    to{
+        opacity:1;
+    }
+
+}
+
+
+@keyframes bounce{
+
+    0%,80%,100%{
+        transform:scale(.5);
+        opacity:.5;
+    }
+
+    40%{
+        transform:scale(1);
+        opacity:1;
+    }
+
 }

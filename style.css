@@ -20,244 +20,48 @@ body{
     overflow-x:hidden;
 }
 
+
 body:before{
     content:"";
     position:fixed;
     inset:0;
     z-index:-1;
+
     background:
     radial-gradient(circle at top left,rgba(168,179,154,.25),transparent 40%),
     radial-gradient(circle at bottom right,rgba(181,106,69,.15),transparent 45%);
 }
 
 
-/* CARD */
 
-.card{
-    position:relative;
-    width:100%;
-    max-width:520px;
-    background:#fff;
-    border-radius:28px;
-    padding:25px 18px;
-    text-align:center;
-    box-shadow:0 20px 45px rgba(90,70,53,.12);
-    overflow:hidden;
-    animation:fadeUp .8s ease;
-}
-
-
-/* DECORATIVE FLOWERS */
-
-.card:before,
-.card:after{
-    content:"🌿";
-    position:absolute;
-    font-size:45px;
-    opacity:.25;
-}
-
-.card:before{
-    top:10px;
-    left:10px;
-}
-
-.card:after{
-    bottom:10px;
-    right:10px;
-}
-
-
-
-/* MONOGRAM */
-
-.monogram{
-    width:70px;
-    height:auto;
-    display:block;
-    margin:0 auto 8px;
-}
-
-
-
-/* NAMES */
-
-.names{
-    font-family:'Great Vibes',cursive;
-    font-size:48px;
-    color:#B56A45;
-}
-
-
-.heading{
-    font-family:'Cormorant Garamond',serif;
-    font-size:28px;
-    color:#5A4635;
-    margin:10px 0 16px;
-}
-
-
-.invitation{
-    font-family:'Cormorant Garamond',serif;
-    font-size:20px;
-    line-height:1.6;
-}
-
-
-
-/* DATE */
-
-.wedding-date{
-    margin:20px 0 12px;
-    font-size:21px;
-    font-weight:600;
-    color:#B56A45;
-}
-
-
-/* RSVP */
-
-.divider{
-    height:1px;
-    background:#e8dfd5;
-    margin:22px 0;
-}
-
-
-.search-title{
-    font-family:'Cormorant Garamond',serif;
-    font-size:28px;
-}
-
-
-/* INPUT */
-
-input,
-textarea{
-    width:100%;
-    padding:14px;
-    border-radius:14px;
-    border:1px solid #d8cec2;
-    margin-top:12px;
-    font-family:'Poppins',sans-serif;
-}
-
-
-
-/* BUTTON */
-
-button{
-    width:100%;
-    padding:15px;
-    margin-top:12px;
-    border:none;
-    border-radius:14px;
-    background:#B56A45;
-    color:white;
-    font-size:15px;
-    transition:.3s;
-}
-
-button:hover{
-    transform:translateY(-2px);
-    background:#9f5938;
-}
-
-
-/* RSVP BOXES */
-
-.invitation-box,
-.rsvp-details,
-.thank-you{
-
-    background:#fffaf5;
-    border:1px solid #ead8c8;
-    border-radius:22px;
-    padding:22px 18px;
-    margin-top:20px;
-
-    animation:fadeUp .6s ease;
-
-}
-
-
-
-.seat-number{
-
-    font-size:40px;
-    color:#B56A45;
-    font-weight:bold;
-
-}
-
-
-
-.no-button{
-
-    background:#A8B39A;
-
-}
-
-
-
-/* ANIMATION */
-
-@keyframes fadeUp{
-
-    from{
-        opacity:0;
-        transform:translateY(25px);
-    }
-
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-
-}
-
-
-
-@media(min-width:768px){
-
-.card{
-    max-width:560px;
-    padding:35px;
-}
-
-
-.monogram{
-    width:90px;
-}
-
-
-.names{
-    font-size:60px;
-}
-
-}
-/* REALISTIC PETAL FALLING */
+/* PETALS */
 
 .petals{
     position:fixed;
-    inset:0;
-    pointer-events:none;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
     overflow:hidden;
-    z-index:10;
+    pointer-events:none;
+    z-index:999;
 }
 
 
 .petals span{
     position:absolute;
-    top:-30px;
+    top:-40px;
+    display:block;
 
-    width:14px;
-    height:20px;
+    width:18px;
+    height:26px;
 
     background:#F6D7C3;
-    border-radius:70% 30% 70% 30%;
 
-    opacity:.75;
+    border-radius:
+    70% 30% 70% 30%;
+
+    opacity:.8;
 
     animation:petalFall 12s linear infinite;
 }
@@ -268,6 +72,7 @@ button:hover{
 }
 
 
+
 .petals span:nth-child(1){
     left:8%;
     animation-delay:0s;
@@ -276,7 +81,6 @@ button:hover{
 .petals span:nth-child(2){
     left:22%;
     animation-delay:3s;
-    transform:scale(.8);
 }
 
 .petals span:nth-child(3){
@@ -287,7 +91,6 @@ button:hover{
 .petals span:nth-child(4){
     left:52%;
     animation-delay:1s;
-    transform:scale(.7);
 }
 
 .petals span:nth-child(5){
@@ -315,17 +118,331 @@ button:hover{
 @keyframes petalFall{
 
 0%{
-    transform:translateY(-40px) rotate(0deg);
+    transform:
+    translateY(-40px)
+    rotate(0deg);
 }
 
 
 50%{
-    transform:translateY(50vh) translateX(25px) rotate(180deg);
+    transform:
+    translateY(50vh)
+    translateX(30px)
+    rotate(180deg);
 }
 
 
 100%{
-    transform:translateY(110vh) translateX(-25px) rotate(360deg);
+    transform:
+    translateY(110vh)
+    translateX(-30px)
+    rotate(360deg);
+}
+
+}
+
+
+
+/* CARD */
+
+.card{
+    position:relative;
+    width:100%;
+    max-width:520px;
+
+    background:#fff;
+
+    border-radius:28px;
+
+    padding:25px 18px;
+
+    text-align:center;
+
+    box-shadow:
+    0 20px 45px rgba(90,70,53,.12);
+
+    animation:fadeUp .8s ease;
+}
+
+
+
+/* DECORATIVE GREENERY */
+
+.card:before,
+.card:after{
+
+    content:"🌿";
+
+    position:absolute;
+
+    font-size:45px;
+
+    opacity:.25;
+
+}
+
+
+.card:before{
+
+    top:10px;
+    left:10px;
+
+}
+
+
+.card:after{
+
+    bottom:10px;
+    right:10px;
+
+}
+
+
+
+
+/* MONOGRAM */
+
+.monogram{
+
+    width:70px;
+
+    height:auto;
+
+    display:block;
+
+    margin:0 auto 8px;
+
+}
+
+
+
+/* TEXT */
+
+.names{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:48px;
+
+    color:#B56A45;
+
+}
+
+
+
+.heading{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:28px;
+
+    color:#5A4635;
+
+    margin:10px 0 16px;
+
+}
+
+
+
+.invitation{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:20px;
+
+    line-height:1.6;
+
+}
+
+
+
+
+.wedding-date{
+
+    margin:20px 0 12px;
+
+    font-size:21px;
+
+    font-weight:600;
+
+    color:#B56A45;
+
+}
+
+
+
+
+.divider{
+
+    height:1px;
+
+    background:#e8dfd5;
+
+    margin:22px 0;
+
+}
+
+
+
+.search-title{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:28px;
+
+}
+
+
+
+
+/* INPUT */
+
+input,
+textarea{
+
+    width:100%;
+
+    padding:14px;
+
+    border-radius:14px;
+
+    border:1px solid #d8cec2;
+
+    margin-top:12px;
+
+    font-family:'Poppins',sans-serif;
+
+}
+
+
+
+
+
+/* BUTTON */
+
+button{
+
+    width:100%;
+
+    padding:15px;
+
+    margin-top:12px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:#B56A45;
+
+    color:white;
+
+    font-size:15px;
+
+    transition:.3s;
+
+}
+
+
+button:hover{
+
+    transform:translateY(-2px);
+
+    background:#9f5938;
+
+}
+
+
+
+
+/* RSVP BOX */
+
+.invitation-box,
+.rsvp-details,
+.thank-you{
+
+    background:#fffaf5;
+
+    border:1px solid #ead8c8;
+
+    border-radius:22px;
+
+    padding:22px 18px;
+
+    margin-top:20px;
+
+    animation:fadeUp .6s ease;
+
+}
+
+
+
+.seat-number{
+
+    font-size:40px;
+
+    color:#B56A45;
+
+    font-weight:bold;
+
+}
+
+
+
+.no-button{
+
+    background:#A8B39A;
+
+}
+
+
+
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(25px);
+
+}
+
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+
+
+
+@media(min-width:768px){
+
+.card{
+
+max-width:560px;
+
+padding:35px;
+
+}
+
+
+.monogram{
+
+width:90px;
+
+}
+
+
+.names{
+
+font-size:60px;
+
 }
 
 }

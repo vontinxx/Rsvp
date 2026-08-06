@@ -343,49 +343,66 @@ function submitRSVP(status){
 
     .then(()=>{
 
+    if(status === "No"){
 
-        if(status === "No"){
+        document.getElementById("result").innerHTML = `
 
+        <div class="thank-you">
 
-            document.getElementById("result").innerHTML = `
+        <h2>
+        Thank You!
+        </h2>
 
+        <p>
+        We appreciate you letting us know.
+        </p>
 
-            <div class="thank-you">
+        <p>
+        We understand that you won't be able to join us.
+        </p>
 
+        <p>
+        With love and gratitude,
+        <br>
+        Christine & Von
+        </p>
 
-            <div class="heart">
-            🤎
-            </div>
+        </div>
 
+        `;
 
-            <h2>
-            Thank You!
-            </h2>
+    } else {
 
+        document.getElementById("result").innerHTML = `
 
-            <p>
-            We appreciate you letting us know.
-            </p>
+        <div class="thank-you">
 
+        <h2>
+        Thank You!
+        </h2>
 
-            <p>
-            We’re sorry you won’t be able to celebrate
-            with us, but we completely understand.
-            </p>
+        <p>
+        Your RSVP has been received.
+        </p>
 
+        <p>
+        We can't wait to celebrate
+        our special day with you.
+        </p>
 
-            <p>
-            With love and gratitude,
-            <br>
-            Christine & Von
-            </p>
+        <p>
+        With love and gratitude,
+        <br>
+        Christine & Von
+        </p>
 
+        </div>
 
-            </div>
+        `;
 
+    }
 
-            `;
-
+});
 
 
         } else {

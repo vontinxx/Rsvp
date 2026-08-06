@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <g transform="translate(6,6)">
+    <path d="M20 140 C36 120 66 112 92 124 C118 136 140 150 148 170 C110 160 70 150 20 140Z" fill="#EBD3C8"/>
+    <path d="M6 120 C22 100 48 96 70 110 C92 124 110 140 118 158 C72 146 36 136 6 120Z" fill="#F6D7C3"/>
+    <ellipse cx="120" cy="160" rx="36" ry="12" fill="#8E9A74" opacity="0.14"/>
+  </g>
+</svg>

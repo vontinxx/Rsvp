@@ -24,6 +24,13 @@
 <body>
 
 
+<!-- FLORAL DECORATIONS -->
+<img src="assets/floral-top-left.svg" class="floral top-left" alt="">
+<img src="assets/floral-top-right.svg" class="floral top-right" alt="">
+<img src="assets/floral-bottom-left.svg" class="floral bottom-left" alt="">
+<img src="assets/floral-bottom-right.svg" class="floral bottom-right" alt="">
+
+
 <!-- FALLING PETALS -->
 
 <div class="petals">
@@ -43,12 +50,11 @@
 
 <!-- MUSIC -->
 
-<audio id="bgMusic" loop>
+<audio id="bgMusic" loop controls>
 
 <source src="music.mp3" type="audio/mpeg">
 
 </audio>
-
 
 
 
@@ -74,7 +80,6 @@ Welcome to Our Wedding RSVP
 
 
 
-
 <p class="invitation">
 
 Together with our families,<br><br>
@@ -87,13 +92,11 @@ as we celebrate our wedding.
 
 
 
-
 <div class="wedding-date">
 
 November 14, 2026
 
 </div>
-
 
 
 
@@ -109,13 +112,11 @@ October 14, 2026
 
 
 
-
 <p class="deadline-note">
 
 We kindly ask that you respond by the RSVP date to help us finalize our seating arrangements.
 
 </p>
-
 
 
 
@@ -127,9 +128,7 @@ We kindly ask that you respond by the RSVP date to help us finalize our seating 
 
 
 
-
 <div class="divider"></div>
-
 
 
 
@@ -141,12 +140,10 @@ Find Your Invitation
 
 
 
-
 <input
 type="text"
 id="guestName"
 placeholder="Enter your full name">
-
 
 
 
@@ -158,15 +155,14 @@ Search Invitation
 
 
 
+<div id="result" style="position:relative;"></div>
+<img src="assets/floral-rsvp.svg" class="floral rsvp-accent" alt="">
 
-<div id="result"></div>
-
-
+<!-- Status area added for mobile-friendly debug messages -->
+<div id="status" style="margin-top:12px;color:#333;font-size:14px;"></div>
 
 
 </div>
-
-
 
 
 

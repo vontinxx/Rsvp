@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 260" fill="none">
+  <g transform="translate(6,6)">
+    <circle cx="200" cy="180" r="28" fill="#C75A3C" opacity="0.95"/>
+    <path d="M180 150 C192 132 220 120 240 132 C260 144 258 172 238 186 C218 200 188 208 170 188 C152 168 164 158 180 150Z" fill="#EBD3C8"/>
+    <ellipse cx="156" cy="220" rx="60" ry="20" fill="#8E9A74" opacity="0.12"/>
+  </g>
+</svg>

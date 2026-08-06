@@ -236,3 +236,96 @@ button:hover{
 }
 
 }
+/* REALISTIC PETAL FALLING */
+
+.petals{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    overflow:hidden;
+    z-index:10;
+}
+
+
+.petals span{
+    position:absolute;
+    top:-30px;
+
+    width:14px;
+    height:20px;
+
+    background:#F6D7C3;
+    border-radius:70% 30% 70% 30%;
+
+    opacity:.75;
+
+    animation:petalFall 12s linear infinite;
+}
+
+
+.petals span:nth-child(even){
+    background:#FFF1E6;
+}
+
+
+.petals span:nth-child(1){
+    left:8%;
+    animation-delay:0s;
+}
+
+.petals span:nth-child(2){
+    left:22%;
+    animation-delay:3s;
+    transform:scale(.8);
+}
+
+.petals span:nth-child(3){
+    left:38%;
+    animation-delay:6s;
+}
+
+.petals span:nth-child(4){
+    left:52%;
+    animation-delay:1s;
+    transform:scale(.7);
+}
+
+.petals span:nth-child(5){
+    left:68%;
+    animation-delay:4s;
+}
+
+.petals span:nth-child(6){
+    left:82%;
+    animation-delay:7s;
+}
+
+.petals span:nth-child(7){
+    left:30%;
+    animation-delay:5s;
+}
+
+.petals span:nth-child(8){
+    left:60%;
+    animation-delay:8s;
+}
+
+
+
+@keyframes petalFall{
+
+0%{
+    transform:translateY(-40px) rotate(0deg);
+}
+
+
+50%{
+    transform:translateY(50vh) translateX(25px) rotate(180deg);
+}
+
+
+100%{
+    transform:translateY(110vh) translateX(-25px) rotate(360deg);
+}
+
+}

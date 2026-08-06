@@ -1,126 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Christine & Von | Wedding RSVP</title>
+<title>Christine & Von | November 14, 2026</title>
 
 <meta name="theme-color" content="#F8F5F0">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
-
-<!-- Background Music -->
 
 <audio id="bgMusic" loop>
     <source src="music.mp3" type="audio/mpeg">
 </audio>
 
-<!-- Main Card -->
+<div id="loadingScreen" class="loading-screen">
+    <img src="IMG_1100.png" class="loading-logo" alt="Christine & Von Monogram">
+    <h1 class="loading-name">Christine & Von</h1>
+    <p class="loading-text">Preparing your invitation...</p>
 
-<div class="card">
+    <div class="loader">
+        <span></span><span></span><span></span>
+    </div>
+</div>
 
-    <!-- Monogram -->
+<div id="mainCard" class="card hidden">
 
-    <img
-        src="IMG_1100.png"
-        alt="Christine and Von Monogram"
-        class="monogram">
+    <img src="IMG_1100.png" class="monogram" alt="Christine & Von Monogram">
 
-    <!-- Couple Names -->
+    <h1 class="names">Christine & Von</h1>
 
-    <h1 class="names">
-        Christine & Von
-    </h1>
-
-    <!-- Heading -->
-
-    <h2 class="heading">
-        Welcome to Our Wedding RSVP
-    </h2>
-
-    <!-- Invitation -->
+    <h2 class="heading">Welcome to Our Wedding RSVP</h2>
 
     <p class="invitation">
-
         Together with our families,<br><br>
-
         we request the pleasure of your company<br>
-
         as we celebrate our wedding.
-
     </p>
 
-    <!-- Wedding Date -->
-
-    <div class="wedding-date">
-
-        November 14, 2026
-
-    </div>
-
-    <!-- RSVP Deadline -->
+    <div class="wedding-date">November 14, 2026</div>
 
     <div class="deadline">
-
         🤎 Kindly respond on or before
-
         <strong>October 14, 2026</strong>
-
     </div>
 
     <p class="deadline-note">
-
         We kindly ask that you respond by the RSVP date to help us finalize our seating arrangements.
-
     </p>
 
-    <!-- Music -->
-
-    <button
-        id="musicButton"
-        class="music-button">
-
-        ▶ Play Music
-
-    </button>
-
-    <!-- Divider -->
+    <button id="musicButton" class="music-button">▶ Play Music</button>
 
     <div class="divider"></div>
 
-    <!-- Search -->
-
-    <h3 class="search-title">
-
-        Find Your Invitation
-
-    </h3>
+    <h3 class="search-title">Find Your Invitation</h3>
 
     <input
         type="text"
         id="guestName"
         placeholder="Enter your full name">
 
-    <button
-        id="searchButton">
-
-        Search Invitation
-
-    </button>
-
-    <!-- Result -->
+    <button id="searchButton">Search Invitation</button>
 
     <div id="result"></div>
 
@@ -129,5 +75,4 @@
 <script src="script.js"></script>
 
 </body>
-
 </html>

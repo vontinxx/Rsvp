@@ -12,7 +12,6 @@ let guestData = null;
 const music = document.getElementById("bgMusic");
 const musicButton = document.getElementById("musicButton");
 
-
 if(musicButton && music){
 
     musicButton.addEventListener("click", function(){
@@ -20,13 +19,11 @@ if(musicButton && music){
         if(music.paused){
 
             music.play();
-
             musicButton.innerHTML = "⏸ Pause Music";
 
         }else{
 
             music.pause();
-
             musicButton.innerHTML = "▶ Play Music";
 
         }
@@ -38,7 +35,7 @@ if(musicButton && music){
 
 
 // =======================
-// SEARCH GUEST
+// SEARCH INVITATION
 // =======================
 
 document.getElementById("searchButton").addEventListener("click", function(){
@@ -160,7 +157,7 @@ document.getElementById("searchButton").addEventListener("click", function(){
 
 
 // =======================
-// YES / NO RESPONSE
+// CONFIRM ATTENDANCE
 // =======================
 
 
@@ -192,7 +189,7 @@ function confirmAttendance(answer){
         </label>
 
 
-        <input 
+        <input
         type="text"
         class="extraGuest"
         placeholder="Guest ${i} Name">
@@ -300,7 +297,6 @@ function submitRSVP(status){
 
 
 
-
     const message =
 
     document.getElementById("message")
@@ -348,52 +344,95 @@ function submitRSVP(status){
     .then(()=>{
 
 
-        document.getElementById("result").innerHTML = `
+        if(status === "No"){
+
+
+            document.getElementById("result").innerHTML = `
+
+
+            <div class="thank-you">
+
+
+            <div class="heart">
+            🤎
+            </div>
+
+
+            <h2>
+            Thank You!
+            </h2>
+
+
+            <p>
+            We appreciate you letting us know.
+            </p>
+
+
+            <p>
+            We’re sorry you won’t be able to celebrate
+            with us, but we completely understand.
+            </p>
+
+
+            <p>
+            With love and gratitude,
+            <br>
+            Christine & Von
+            </p>
+
+
+            </div>
+
+
+            `;
 
 
 
-        <div class="thank-you">
-
-
-        <div class="heart">
-        🤎
-        </div>
+        } else {
 
 
 
-        <h2>
-        Thank You!
-        </h2>
+            document.getElementById("result").innerHTML = `
 
 
-
-        <p>
-        Your RSVP has been received.
-        </p>
+            <div class="thank-you">
 
 
-
-        <p>
-        We can't wait to celebrate
-        our special day with you.
-        </p>
+            <div class="heart">
+            🤎
+            </div>
 
 
-
-        <p>
-        With love and gratitude,
-        <br>
-        Christine & Von
-        </p>
+            <h2>
+            Thank You!
+            </h2>
 
 
+            <p>
+            Your RSVP has been received.
+            </p>
 
-        </div>
+
+            <p>
+            We can't wait to celebrate
+            our special day with you.
+            </p>
 
 
+            <p>
+            With love and gratitude,
+            <br>
+            Christine & Von
+            </p>
 
-        `;
 
+            </div>
+
+
+            `;
+
+
+        }
 
 
     });

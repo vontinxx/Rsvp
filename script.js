@@ -1,7 +1,6 @@
 // GOOGLE SHEET WEB APP URL
 const scriptURL = "https://script.google.com/macros/s/AKfycbzXCcovs5ZM9YzqMXgckN_vwzTu_FRc9Nd1Reab__COKVJnJf65vv5NomY_PgZfoFlL/exec";
 
-
 let guestData = null;
 
 
@@ -18,8 +17,18 @@ if(musicButton && music){
 
         if(music.paused){
 
-            music.play();
-            musicButton.innerHTML = "⏸ Pause Music";
+            music.play()
+            .then(()=>{
+
+                musicButton.innerHTML = "⏸ Pause Music";
+
+            })
+            .catch(error=>{
+
+                console.log(error);
+
+            });
+
 
         }else{
 
@@ -51,7 +60,6 @@ document.getElementById("searchButton").addEventListener("click", function(){
     }
 
 
-
     fetch(scriptURL + "?name=" + encodeURIComponent(name))
 
 
@@ -62,7 +70,6 @@ document.getElementById("searchButton").addEventListener("click", function(){
 
 
         if(data.found === false){
-
 
             document.getElementById("result").innerHTML = `
 
@@ -82,9 +89,7 @@ document.getElementById("searchButton").addEventListener("click", function(){
         }
 
 
-
         guestData = data;
-
 
 
         document.getElementById("result").innerHTML = `
@@ -141,7 +146,7 @@ document.getElementById("searchButton").addEventListener("click", function(){
     })
 
 
-    .catch(error => {
+    .catch(error=>{
 
         console.log(error);
 
@@ -160,7 +165,6 @@ document.getElementById("searchButton").addEventListener("click", function(){
 // CONFIRM ATTENDANCE
 // =======================
 
-
 function confirmAttendance(answer){
 
 
@@ -173,9 +177,7 @@ function confirmAttendance(answer){
     }
 
 
-
     let guestFields = "";
-
 
 
     for(let i = 2; i <= guestData.seats; i++){
@@ -197,9 +199,7 @@ function confirmAttendance(answer){
 
         `;
 
-
     }
-
 
 
 
@@ -212,7 +212,6 @@ function confirmAttendance(answer){
     <h3>
     Primary Guest
     </h3>
-
 
 
     <div class="primary">
@@ -245,8 +244,7 @@ function confirmAttendance(answer){
 
 
     <textarea id="message"
-    placeholder="Write your message here...">
-    </textarea>
+    placeholder="Write your message here..."></textarea>
 
 
 
@@ -263,7 +261,6 @@ function confirmAttendance(answer){
     `;
 
 
-
 }
 
 
@@ -274,7 +271,6 @@ function confirmAttendance(answer){
 // SUBMIT RSVP
 // =======================
 
-
 function submitRSVP(status){
 
 
@@ -283,7 +279,7 @@ function submitRSVP(status){
 
     document.querySelectorAll(".extraGuest")
 
-    .forEach(input => {
+    .forEach(input=>{
 
 
         if(input.value.trim() !== ""){
@@ -292,121 +288,41 @@ function submitRSVP(status){
 
         }
 
-
     });
 
 
 
-    const message =
-
-    document.getElementById("message")
-
+    const message = document.getElementById("message")
     ?
-
     document.getElementById("message").value
-
     :
-
     "";
 
 
 
-
-
-    fetch(scriptURL, {
-
+    fetch(scriptURL,{
 
         method:"POST",
 
-
         body:JSON.stringify({
-
 
             name:guestData.name,
 
-
             status:status,
-
 
             guests:guests.join(", "),
 
-
             message:message
 
-
         })
-
 
     })
 
 
-
     .then(()=>{
 
-    if(status === "No"){
 
-        document.getElementById("result").innerHTML = `
-
-        <div class="thank-you">
-
-        <h2>
-        Thank You!
-        </h2>
-
-        <p>
-        We appreciate you letting us know.
-        </p>
-
-        <p>
-        We understand that you won't be able to join us.
-        </p>
-
-        <p>
-        With love and gratitude,
-        <br>
-        Christine & Von
-        </p>
-
-        </div>
-
-        `;
-
-    } else {
-
-        document.getElementById("result").innerHTML = `
-
-        <div class="thank-you">
-
-        <h2>
-        Thank You!
-        </h2>
-
-        <p>
-        Your RSVP has been received.
-        </p>
-
-        <p>
-        We can't wait to celebrate
-        our special day with you.
-        </p>
-
-        <p>
-        With love and gratitude,
-        <br>
-        Christine & Von
-        </p>
-
-        </div>
-
-        `;
-
-    }
-
-});
-
-
-        } else {
-
+        if(status === "No"){
 
 
             document.getElementById("result").innerHTML = `
@@ -415,9 +331,41 @@ function submitRSVP(status){
             <div class="thank-you">
 
 
-            <div class="heart">
-            🤎
+            <h2>
+            Thank You!
+            </h2>
+
+
+            <p>
+            We appreciate you letting us know.
+            </p>
+
+
+            <p>
+            We understand that you won't be able to join us.
+            </p>
+
+
+            <p>
+            With love and gratitude,
+            <br>
+            Christine & Von
+            </p>
+
+
             </div>
+
+
+            `;
+
+
+        } else {
+
+
+            document.getElementById("result").innerHTML = `
+
+
+            <div class="thank-you">
 
 
             <h2>
@@ -452,8 +400,16 @@ function submitRSVP(status){
         }
 
 
-    });
+    })
 
+
+    .catch(error=>{
+
+        console.log(error);
+
+        alert("Something went wrong. Please try again.");
+
+    });
 
 
 }

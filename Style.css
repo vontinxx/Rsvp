@@ -80,3 +80,102 @@ button:hover{background:#9f5938;transform:translateY(-2px)}
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
 @keyframes bounce{0%,80%,100%{transform:scale(.5);opacity:.5}40%{transform:scale(1);opacity:1}}"
+/* RSVP INVITATION BOX */
+
+.invitation-box,
+.rsvp-details,
+.thank-you{
+    background:#fff;
+    padding:30px 24px;
+    border-radius:24px;
+    box-shadow:0 12px 35px rgba(0,0,0,.08);
+    animation:fadeUp .8s;
+}
+
+
+.invitation-box h3,
+.rsvp-details h3{
+    font-family:'Cormorant Garamond',serif;
+    font-size:32px;
+    color:#B56A45;
+    margin-bottom:15px;
+}
+
+
+.invitation-box p,
+.rsvp-details p,
+.thank-you p{
+    font-family:'Cormorant Garamond',serif;
+    font-size:22px;
+    line-height:1.6;
+}
+
+
+.seat-number{
+    font-size:40px;
+    font-weight:600;
+    color:#B56A45;
+    margin:10px;
+}
+
+
+.yes-button{
+    background:#B56A45;
+    margin-top:10px;
+}
+
+
+.no-button{
+    background:#A8B39A;
+    margin-top:12px;
+}
+
+
+.primary{
+    background:#F8F5F0;
+    padding:16px;
+    border-radius:14px;
+    margin-bottom:18px;
+    font-weight:600;
+}
+
+
+.primary span{
+    display:block;
+    color:#7A8B6A;
+    font-size:14px;
+    margin-top:5px;
+}
+
+
+.rsvp-details label{
+    display:block;
+    text-align:left;
+    margin:14px 0 8px;
+    font-weight:500;
+}
+
+
+textarea{
+    width:100%;
+    min-height:120px;
+    padding:16px;
+    border:1px solid #d7cec5;
+    border-radius:14px;
+    resize:none;
+    font-family:'Poppins',sans-serif;
+    margin-bottom:16px;
+}
+
+
+.thank-you h2{
+    font-family:'Great Vibes',cursive;
+    font-size:58px;
+    color:#B56A45;
+}
+
+
+.heart{
+    font-size:50px;
+    margin-bottom:15px;
+}
